@@ -1,21 +1,23 @@
 .menu {
-    position: fixed;
+    position: relative;
     width: 100%;
+    height: calc(70px + 60px + 75px);
     background-color: rgb(0, 0, 0);
     color: white
+}
+
+.menu_nav {
+    position: fixed;
+    width: 100%;
 }
 
 
 // MAIN MENU
 .mainMenu {
-    z-index: 2;
-}
-
-.mainMenu_container {
     display: grid;
     grid-template-columns: repeat(3, 50px) 1fr;
     grid-template-rows: 70px 60px 75px;
-    background-color: rgb(0, 0, 0);
+    z-index: 2;
 
 
     & .logo {
@@ -57,6 +59,7 @@
     opacity: 1;
     transition: all 1s ease;
     animation: visible 1.5s;
+    background-color: rgb(0, 0, 0);
 }
 
 @keyframes visible {

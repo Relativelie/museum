@@ -29,7 +29,7 @@ export const Menu = () => {
 
         return (
             <div className="menu">
-                <nav>
+                <nav className="menu_nav">
                     <MainMenu content={content} changeSubMenuVisible={changeSubMenuVisible} activeMenuId={activeMenuId} />
                     <SubMenu content={content} activeMenuElem={activeMenuId} isActive={isActive}/>
                 </nav>
