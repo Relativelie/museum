@@ -1,6 +1,7 @@
 import { CarouselComponent } from '../carousel/CarouselComponent';
-import { Feedback } from '../feedback/Feedback';
+import { Faq } from '../faq/Faq';
 import { Menu } from '../menu/Menu';
+import { News } from '../news/News';
 import './App.scss';
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       <Menu />
       <CarouselComponent />
-      <Feedback />
+      <Faq />
+      <News />
     </div>
   );
 }

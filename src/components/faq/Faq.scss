@@ -1,13 +1,12 @@
 @import "../../variables";
 
-.feedback {
+.faq {
     display: grid;
-    grid-template-columns: 352px minmax(50%, 988px) 100px;
-    margin-top: 170px;
+    grid-template-columns: 352px minmax(50%, 988px);
+    margin: 170px 100px 100px 100px;
 }
 
-.feedback_title {
-    justify-self: center;
+.faq_title {
 
     & h3 {
         margin: 0;
@@ -21,14 +20,14 @@ details[open] {
     border-top: 1px solid rgba(230, 210, 210) !important;
 }
 
-.feedbackContent_elem {
+.faqContent_elem {
     border-top: 1px solid rgba(230, 210, 210, 0.2);
 
     &:last-child {
         border-bottom: 1px solid rgba(230, 210, 210, 0.2);
     }
 
-    & .feedbackContent_question {
+    & .faqContent_question {
         padding: 30px 0;
         font-size: 24px;
         list-style-type: none;
@@ -37,7 +36,7 @@ details[open] {
         cursor: pointer;
     }
 
-    & .feedbackContent_answer {
+    & .faqContent_answer {
         margin-bottom: 30px;
         font-family: $fontFamily;
         font-size: 16px;

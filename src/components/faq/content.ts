@@ -1,4 +1,4 @@
-export const feedbackContent = [
+export const faqContent = [
     {
         id: 1,
         question: 'Как добраться до музея?',

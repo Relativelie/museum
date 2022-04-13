@@ -23,7 +23,8 @@
         "react",
         "@typescript-eslint"
     ],
-    "rules": {  
+    "rules": { 
+        "object-curly-newline": "off",
         "react/jsx-indent-props": "off",
         "arrow-body-style": "off",
         "import/prefer-default-export": "off",
