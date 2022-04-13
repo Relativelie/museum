@@ -1,3 +1,33 @@
-.carousel {
-    
+.carouselSlides_img {
+    width: 96%;
+    z-index: -1;
+}
+
+.slick-slide div {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slick-arrow {
+    top: auto !important;
+    bottom: -90px !important;
+    width: clamp(40px, 6vw, 100px) !important;
+    background-size: cover !important;
+}
+
+.slick-arrow::before {
+    content: none !important;
+}
+
+.slick-prev {
+    left: 42% !important;
+    background-image: url("../../assets/images/carousel/prev.png") !important;
+}
+
+.slick-next {
+    right: 42% !important;
+    background-position: right !important;
+    background-image: url("../../assets/images/carousel/next.png") !important;
 }
