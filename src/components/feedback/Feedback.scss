@@ -1,0 +1,46 @@
+@import "../../variables";
+
+.feedback {
+    display: grid;
+    grid-template-columns: 352px minmax(50%, 988px) 100px;
+    margin-top: 170px;
+}
+
+.feedback_title {
+    justify-self: center;
+
+    & h3 {
+        margin: 0;
+        font-family: $fontFamily;
+        font-size: 80px;
+        color: $fontColor;
+    }
+}
+
+details[open] {
+    border-top: 1px solid rgba(230, 210, 210) !important;
+}
+
+.feedbackContent_elem {
+    border-top: 1px solid rgba(230, 210, 210, 0.2);
+
+    &:last-child {
+        border-bottom: 1px solid rgba(230, 210, 210, 0.2);
+    }
+
+    & .feedbackContent_question {
+        padding: 30px 0;
+        font-size: 24px;
+        list-style-type: none;
+        font-family: $fontFamily;
+        color: $fontColor;
+        cursor: pointer;
+    }
+
+    & .feedbackContent_answer {
+        margin-bottom: 30px;
+        font-family: $fontFamily;
+        font-size: 16px;
+        color: $fontColor;
+    }
+}

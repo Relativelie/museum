@@ -1,48 +1,35 @@
-import { useEffect, useState } from "react";
+import { FC } from 'react';
+import Slider from 'react-slick';
 
-import slideOne from "../../assets/images/carousel/img.png";
-import Slider from "react-slick";
-import "./Carousel.scss";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import { carouselContent } from './content';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './Carousel.scss';
 
-
-export const CarouselComponent = () => {
-    const [translate, setTranslate] = useState(15);
-    const [current, setCurrent] = useState(0);
-
-    const test = [
-        ["Cлайд 4", slideOne],
-        ["Cлайд 1", slideOne],
-        ["Cлайд 2", slideOne],
-        ["Cлайд 3", slideOne],
-    ]
-
-
-
+export const CarouselComponent: FC = () => {
     const settings = {
-        className: "center",
+        className: 'center',
         centerMode: true,
         infinite: true,
         slidesToShow: 1,
         speed: 500,
-        initialSlide: 2
+        initialSlide: 2,
     };
-
     return (
+        // eslint-disable-next-line react/jsx-props-no-spreading
         <Slider {...settings}>
-            {test.map((elem, index) => {
+            {carouselContent.map(((elem) => {
+                const { id, name, image } = elem;
                 return (
-                    <div className="carouselContent" key={`carousel-${index}`}>
+                    <div className="carouselContent" key={`carousel-${id}`}>
                         <div className="carouselContent_text">
-                            <h3>{elem[0]}</h3>
+                            <h3>{name}</h3>
                         </div>
-                        <img className="carouselContent_img" src={elem[1]} alt="slide picture" />
+                        <img className="carouselContent_img" src={image} alt="slide" />
                     </div>
-                )
-            })}
+                );
+            }))}
         </Slider>
     );
-}
-
+};

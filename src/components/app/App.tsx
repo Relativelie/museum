@@ -1,12 +1,14 @@
-import { CarouselComponent } from "../carousel/CarouselComponent";
-import { Menu } from "../menu/Menu";
-import "./App.scss";
+import { CarouselComponent } from '../carousel/CarouselComponent';
+import { Feedback } from '../feedback/Feedback';
+import { Menu } from '../menu/Menu';
+import './App.scss';
 
 function App() {
   return (
     <div className="App">
       <Menu />
-      <CarouselComponent/>
+      <CarouselComponent />
+      <Feedback />
     </div>
   );
 }

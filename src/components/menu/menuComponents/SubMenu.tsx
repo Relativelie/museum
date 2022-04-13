@@ -8,7 +8,7 @@ export const SubMenu = ({ content, activeMenuElem, isActive }: any) => {
         if (!isActive) {
             setInactiveEl("subMenu_inactive")
         }
-        else setInactiveEl("")
+        else setInactiveEl('')
     }, [isActive])
 
 
