@@ -13,82 +13,36 @@ export const CarouselComponent = () => {
     const [current, setCurrent] = useState(0);
 
     const test = [
-        ["слайд 4"],
-        ["слайд 1", "./../../"],
-        ["слайд 2"],
-        ["слайд 3"],
-
+        ["Cлайд 4", slideOne],
+        ["Cлайд 1", slideOne],
+        ["Cлайд 2", slideOne],
+        ["Cлайд 3", slideOne],
     ]
 
-    // useEffect(() => {
-    //     const next = (current + 1) % slides.length;
-    //     const id = setTimeout(() => setCurrent(next), time);
-    //     return () => clearTimeout(id);
-    //   }, [current]);
-
-    // useEffect(() => {
-    //     const carouselSlides: HTMLElement | null = document.querySelector(".carouselSlides");
-    //     if (carouselSlides !== null) {
-    //         carouselSlides.style.transform = `translateX(${translate}%)`
-    //     }
-
-    // })
-
-    const changeTranslate = (e: any) => {
-
-        if (e.target.innerText === "back") {
-            setTranslate(translate + 80)
-        }
-        else setTranslate(translate - 90)
-    }
 
 
     const settings = {
-        // className: "center",
-        // centerMode: true,
-        // infinite: true,
-        // centerPadding: "16%",
-        // slidesToShow: 1,
-        // speed: 500,
-        // slidesToScroll: 1,
         className: "center",
         centerMode: true,
         infinite: true,
-        // centerPadding: "10px",
         slidesToShow: 1,
         speed: 500,
         initialSlide: 2
+    };
 
-      };
-      return (
+    return (
         <Slider {...settings}>
-{test.map((elem, index) => {
-                    return (
-                        <div key={`carousel-${index}`}>
-                            <div>{elem}</div>
-                            <img className="carouselSlides_img" src={slideOne} alt="slide picture" />
+            {test.map((elem, index) => {
+                return (
+                    <div className="carouselContent" key={`carousel-${index}`}>
+                        <div className="carouselContent_text">
+                            <h3>{elem[0]}</h3>
                         </div>
-
-                    )
-                })}
+                        <img className="carouselContent_img" src={elem[1]} alt="slide picture" />
+                    </div>
+                )
+            })}
         </Slider>
-      );
+    );
 }
-
-
-{/* <div className="carousel">
-            <div className="carouselSlides">
-                {test.map((elem, index) => {
-                    return (
-                        <div key={`carousel-${index}`}>
-                            <div>{elem}</div>
-                            <img className="carouselSlides_img" src={slideOne} alt="slide picture" />
-                        </div>
-
-                    )
-                })}
-            </div>
-            <button onClick={(e) => changeTranslate(e)}>back</button>
-            <button onClick={(e) => changeTranslate(e)}>next</button>
-        </div> */}
 

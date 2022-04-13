@@ -1,4 +1,4 @@
-.carouselSlides_img {
+.carouselContent_img {
     width: 96%;
     z-index: -1;
 }
@@ -6,7 +6,6 @@
 .slick-slide div {
     display: flex !important;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -30,4 +29,15 @@
     right: 42% !important;
     background-position: right !important;
     background-image: url("../../assets/images/carousel/next.png") !important;
+}
+
+
+.carouselContent {
+    position: relative;
+
+    & .carouselContent_text {
+        position: absolute;
+        bottom: 159px;
+        left: 50px;
+    }
 }
