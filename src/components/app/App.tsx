@@ -1,6 +1,7 @@
 import { CarouselComponent } from '../carousel/CarouselComponent';
 import { Faq } from '../faq/Faq';
 import { Feedback } from '../feedback/Feedback';
+import { Footer } from '../footer/Footer';
 import { Menu } from '../menu/Menu';
 import { News } from '../news/News';
 
@@ -14,6 +15,7 @@ function App() {
       <Faq />
       <News />
       <Feedback />
+      <Footer />
     </div>
   );
 }
