@@ -5,6 +5,7 @@ import './News.scss';
 export const News: FC = () => {
     return (
         <div className="news">
+            <h3>Новости</h3>
             {content.map(((elem) => {
                 const { id, title, description, image } = elem;
                 return (

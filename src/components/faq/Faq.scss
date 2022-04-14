@@ -1,45 +1,39 @@
 @import "../../variables";
 
+$defaultBorder: 1px solid rgba(230, 210, 210, 0.2);
+$activeBorder: 1px solid rgba(230, 210, 210) !important;
+
 .faq {
     display: grid;
     grid-template-columns: 352px minmax(50%, 988px);
-    margin: 170px 100px 100px 100px;
+    margin: 170px $defaultMargin 100px $defaultMargin;
 }
 
 .faq_title {
-
-    & h3 {
-        margin: 0;
-        font-family: $fontFamily;
-        font-size: 80px;
-        color: $fontColor;
-    }
-}
-
-details[open] {
-    border-top: 1px solid rgba(230, 210, 210) !important;
+    @include titels($titleColor: $fontColorLight);
+    margin: 0;
 }
 
 .faqContent_elem {
-    border-top: 1px solid rgba(230, 210, 210, 0.2);
+    border-top: $defaultBorder;
+
+    &[open] {
+        border-top: $activeBorder;
+    }
 
     &:last-child {
-        border-bottom: 1px solid rgba(230, 210, 210, 0.2);
+        border-bottom: $defaultBorder;
     }
 
     & .faqContent_question {
+        @include textSettings($fontSize: 24px, $fontColor: $fontColorLight,  $lineHeight: 20px);
         padding: 30px 0;
-        font-size: 24px;
         list-style-type: none;
-        font-family: $fontFamily;
-        color: $fontColor;
         cursor: pointer;
     }
 
     & .faqContent_answer {
+        @include textSettings($fontSize: 16px, $fontColor: $fontColorLight,  $lineHeight: 20px);
         margin-bottom: 30px;
-        font-family: $fontFamily;
-        font-size: 16px;
-        color: $fontColor;
     }
 }

@@ -1,2 +1,34 @@
-$fontFamily: 'Roboto', sans-serif;
-$fontColor: rgb(255, 255, 255);
+$fontFamily: 'Roboto',
+sans-serif;
+$fontColorLight: #FFFFFF;
+$fontColorDark: #0B0A0D;
+$bgDark: #0B0A0D;
+$bgLight: #FFFFFF;
+$fontSizeTitels: 80px;
+$defaultMargin: 100px;
+
+@mixin titels($titleColor) {
+    font-size: $fontSizeTitels;
+    font-weight: 500;
+    line-height: 106%;
+    letter-spacing: -0.03em;
+    color: $titleColor;
+    font-family: $fontFamily;
+}
+
+@mixin textSettings($fontSize, $fontColor, $lineHeight) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-weight: 400;
+    font-family: $fontFamily;
+    color: $fontColor;
+}
+
+@mixin feedbackButtonAndInput {
+    box-sizing: border-box;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    color: $fontColorDark;
+    cursor: pointer;
+}

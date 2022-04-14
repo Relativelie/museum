@@ -1,14 +1,12 @@
 import { FC } from 'react';
 import { faqContent } from './content';
+
 import './Faq.scss';
 
 export const Faq: FC = () => {
     return (
         <div className="faq">
-            <div className="faq_title">
-                <h3>FAQ</h3>
-            </div>
-
+            <h3 className="faq_title">FAQ</h3>
             <div className="faqContent">
                 {faqContent.map(((elem) => {
                     const { id, question, answer } = elem;

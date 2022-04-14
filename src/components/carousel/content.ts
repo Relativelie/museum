@@ -3,7 +3,7 @@ import slideOne from '../../assets/images/carousel/img.png';
 export const carouselContent = [
     {
         id: 1,
-        name: 'Cлайд 4',
+        name: 'Cлайд 1',
         image: slideOne,
     },
     {

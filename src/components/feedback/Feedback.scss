@@ -1,0 +1,54 @@
+@import "../../variables";
+
+.feedback {
+    padding: 50px 100px;
+    background-color: $bgLight;
+}
+
+// TITLE AND DESCRIPTION
+.feedback_title {
+    @include titels($titleColor: $fontColorDark);
+    margin: 0 0 30px 0;
+}
+
+.feedback_description {
+    @include textSettings($fontSize: 16px, $fontColor: rgba(0, 0, 0, 0.6), $lineHeight: 20px);
+    margin: 0;
+}
+
+// INPUTS
+.incorrectInputValue {
+    outline-color: red !important;
+    border: 1px solid red !important;
+}
+
+.feedback_input {
+    @include textSettings($fontSize: 14px, $fontColor: $fontColorDark, $lineHeight: 20px);
+    @include feedbackButtonAndInput;
+    width: 400px;
+    padding: 14px 15px 16px 20px;
+    margin: 10px;
+
+    &::placeholder {
+        color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.feedback_input:focus {
+    border: 1px solid #000000;
+    outline-color: transparent;
+}
+
+// SUBSCRIBE BUTTON
+.feedback_subscribe {
+    @include textSettings($fontSize: 16px, $fontColor: $fontColorDark,  $lineHeight: 20px);
+    @include feedbackButtonAndInput;
+    width: 141px;
+    margin: 10px;
+    background-color: transparent;
+    transition: background-color .7s ease;
+
+    &:hover {
+        background-color: #75FF72;
+    }
+}

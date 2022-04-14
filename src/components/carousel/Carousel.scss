@@ -1,10 +1,28 @@
-.slick-slider {
-    margin-bottom: 70px !important;
+@import "../../variables";
+
+
+.carouselContent {
+    position: relative;
+
+    & .carouselContent_text {
+        position: absolute;
+        bottom: 159px;
+        left: 50px;
+
+        & h3 {
+            @include titels($titleColor: $fontColorLight);
+            margin: 0;
+        }
+    }
+
+    & .carouselContent_img {
+        width: 96%;
+        z-index: -1;
+    }
 }
 
-.carouselContent_img {
-    width: 96%;
-    z-index: -1;
+.slick-slider {
+    margin-bottom: 70px !important;
 }
 
 .slick-slide div {
@@ -33,15 +51,4 @@
     right: 42% !important;
     background-position: right !important;
     background-image: url("../../assets/images/carousel/next.png") !important;
-}
-
-
-.carouselContent {
-    position: relative;
-
-    & .carouselContent_text {
-        position: absolute;
-        bottom: 159px;
-        left: 50px;
-    }
 }

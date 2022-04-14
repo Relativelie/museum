@@ -14,8 +14,9 @@ export const CarouselComponent: FC = () => {
         infinite: true,
         slidesToShow: 1,
         speed: 500,
-        initialSlide: 2,
+        initialSlide: 1,
     };
+
     return (
         // eslint-disable-next-line react/jsx-props-no-spreading
         <Slider {...settings}>
