@@ -24,6 +24,7 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
         "no-restricted-syntax": "off",
         "no-plusplus": "off",
         "@typescript-eslint/no-use-before-define": "off",

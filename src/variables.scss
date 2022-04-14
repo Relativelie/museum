@@ -5,7 +5,8 @@ $fontColorDark: #0B0A0D;
 $bgDark: #0B0A0D;
 $bgLight: #FFFFFF;
 $fontSizeTitles: 80px;
-$defaultMargin: 100px;
+$fontSizeTitlesMob: 40px;
+$defaultMargin: clamp(15px, 5vw, 100px);
 
 @mixin titles($titleColor) {
     font-size: $fontSizeTitles;
@@ -14,6 +15,10 @@ $defaultMargin: 100px;
     letter-spacing: -0.03em;
     color: $titleColor;
     font-family: $fontFamily;
+
+    @media all and (max-width: 700px) {
+        font-size: $fontSizeTitlesMob
+    }
 }
 
 @mixin textSettings($fontSize, $fontColor, $lineHeight) {

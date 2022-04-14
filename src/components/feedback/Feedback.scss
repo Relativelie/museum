@@ -13,17 +13,17 @@
 
 .feedback_description {
     @include textSettings($fontSize: 16px, $fontColor: rgba(0, 0, 0, 0.6), $lineHeight: 20px);
-    margin: 0;
+    margin: 0 0 20px 0;
 }
 
 // FORM
-
 .feedback_form {
     display: grid;
     grid-template-columns: repeat(auto-fit, min(90%, 400px));
     max-width: 850px;
     grid-gap: 20px;
 }
+
 .incorrectInputValue {
     outline-color: red !important;
     border: 1px solid red !important;
@@ -42,7 +42,7 @@
 
 .feedback_input:focus {
     border: 1px solid #000000;
-    outline-color: transparent;
+    outline-color: #000000;
 }
 
 // SUBSCRIBE BUTTON

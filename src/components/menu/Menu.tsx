@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { menuContent } from './menuComponents/content';
 import { MainMenu } from './menuComponents/MainMenu';
-import { SubMenu } from './menuComponents/SubMenu';
+import { Submenu } from './menuComponents/SubMenu';
 
+import openButton from '../../assets/images/menu/open.png';
+import closeButton from '../../assets/images/menu/close.png';
 import './Menu.scss';
 
 export const Menu = () => {
@@ -11,31 +13,69 @@ export const Menu = () => {
     const [isActive, setIsActive] = useState(false);
     const [activeMenuId, setActiveMenuId] = useState(-1);
 
-    const changeSubMenuVisible = (e: any) => {
-        const clickedMenuItem = parseInt(e.target.dataset.elem, 10);
-        if (clickedMenuItem === activeMenuId) {
-            setIsActive(false);
-            setActiveMenuId(-1);
+    // For mobile.
+    const [menuIsOpen, setMenuIsOpen] = useState(false);
+    const [openCloseImg, setOpenCloseImg] = useState(openButton);
+    const [mobMenuBtnClass, setMobMenuBtnClass] = useState('menuMobileButtons_open');
+
+    useEffect(() => {
+        if (menuIsOpen) {
+            setOpenCloseImg(closeButton);
+            setMobMenuBtnClass('menuMobileButtons_close');
         } else {
-            setActiveMenuId(clickedMenuItem);
-            setIsActive(true);
+            setOpenCloseImg(openButton);
+            setMobMenuBtnClass('menuMobileButtons_open');
         }
+    }, [menuIsOpen]);
+
+    const changeSubmenuVisible = (e: any) => {
+        const clickedMenuItem = parseInt(e.target.dataset.elem, 10);
+        if (clickedMenuItem === activeMenuId) openSubmenu();
+        else closeSubmenu(clickedMenuItem);
+    };
+
+    const openSubmenu = () => {
+        setIsActive(false);
+        setActiveMenuId(-1);
+    };
+
+    const closeSubmenu = (clickedMenuItem: number) => {
+        setActiveMenuId(clickedMenuItem);
+        setIsActive(true);
+    };
+
+    const showMobMenu = () => {
+        setMenuIsOpen(!menuIsOpen);
     };
 
     return (
         <div className="menu">
             <nav className="menu_nav">
-                <MainMenu
-                    content={content}
-                    changeSubMenuVisible={changeSubMenuVisible}
-                    activeMenuId={activeMenuId}
-                />
-                <SubMenu
-                    content={content}
-                    activeMenuElem={activeMenuId}
-                    isActive={isActive}
+                <div className="menu_nav_components">
+                    <MainMenu
+                        content={content}
+                        changeSubmenuVisible={changeSubmenuVisible}
+                        activeMenuId={activeMenuId}
+                    >
+                        <Submenu
+                            content={content}
+                            activeMenuElem={activeMenuId}
+                            isActive={isActive}
+                        />
+                    </MainMenu>
+
+                </div>
+                <img
+                    className={`menuMobileButtons ${mobMenuBtnClass}`}
+                    onClick={showMobMenu}
+                    onKeyPress={showMobMenu}
+                    role="menuitem"
+                    tabIndex={0}
+                    src={openCloseImg}
+                    alt="menu button"
                 />
             </nav>
+
         </div>
     );
 };

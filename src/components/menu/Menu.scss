@@ -15,16 +15,14 @@
 // MAIN MENU
 .mainMenu {
     display: grid;
-    grid-template-columns: repeat(3, 50px) 1fr;
+    grid-template-columns: $defaultMargin repeat(2, $defaultMargin) 1fr;
     grid-template-rows: 70px 60px 75px;
     background-color: $bgDark;
-    z-index: 2;
 
     & .logo {
         grid-area: 2/2/3/3;
         height: 49.18px;
         width: 41.67px;
-        z-index: 2;
     }
 
     & .mainMenuContent {
@@ -33,7 +31,6 @@
         padding: 0;
         margin: 0;
         list-style-type: none;
-        z-index: 2;
 
         & .mainMenuContent_elem {
             @include menuTextSettings($fontSize: 16px, $lineHeight: 24px);
@@ -44,39 +41,32 @@
 
         & .mainMenuContent_active {
             background-image: url("../../assets/images/line.png");
-            background-position: bottom;
+            background-position: bottom left;
             background-size: 64px;
             background-repeat: no-repeat;
         }
     }
 }
 
-// SUBMENU
-.subMenu {
+// Submenu
+.Submenu {
     display: grid;
     grid-template-columns: repeat(3, 50px) 1fr;
     grid-template-rows: 1fr 95px;
-    opacity: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin-top: 100px;
     background-color: $bgDark;
-    transition: all 1s ease;
-    animation: visible 1.5s;
+    transition: all .7s ease;
+    z-index: -1;
 }
 
-@keyframes visible {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.Submenu_inactive {
+    margin-top: -200px
 }
 
-.subMenu_inactive {
-    opacity: 0;
-    margin-top: -200px;
-}
-
-.subMenuContent {
+.SubmenuContent {
     grid-column: 4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -85,8 +75,82 @@
     grid-auto-flow: column;
     list-style-type: none;
 
-    & .subMenuContent_elem {
+    & .SubmenuContent_elem {
         @include menuTextSettings($fontSize: 14px, $lineHeight: 21px);
         cursor: pointer;
+    }
+}
+
+// MOBILE 
+.menuMobileButtons {
+    display: none;
+}
+
+.menuMobileButtons_open {
+    width: 36px;
+    height: 24px;
+}
+
+.menuMobileButtons_close {
+    width: 28px;
+    height: 28px;
+}
+
+@media all and (max-width: 700px) {
+
+    // MAIN MENU
+    .menu_nav_components {
+        margin: 35px 15px;
+    }
+
+    .mainMenuContent_container {
+        margin-bottom: 40px;
+    }
+
+    .menuMobileButtons {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 48px;
+    }
+
+    .mainMenu {
+        display: flex;
+    }
+
+    .mainMenuContent {
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 97px;
+        padding-left: 50px;
+        height: 100vh;
+        width: calc(100% - 129px);
+        background-color: $bgDark;
+    }
+
+    .mainMenuContent_elem {
+        margin-left: 50px;
+    }
+
+    .mainMenuContent_active {
+        background-image: none !important;
+    }
+
+    // SUB MENU
+    .Submenu {
+        position: static;
+        display: flex;
+        margin: 30px 82px;
+        transition: none;
+    }
+
+    .SubmenuContent {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Submenu_inactive {
+        margin-top: 0px
     }
 }

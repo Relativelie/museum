@@ -37,3 +37,15 @@ $activeBorder: 1px solid rgba(230, 210, 210) !important;
         margin-bottom: 30px;
     }
 }
+
+@media all and (max-width: 800px) {
+    .faq {
+        display: flex;
+        flex-direction: column;
+        margin: 150px $defaultMargin 80px $defaultMargin;
+    }
+
+    .faq_title {
+        margin-bottom: 20px;
+    }
+}
