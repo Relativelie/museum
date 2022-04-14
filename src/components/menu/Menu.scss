@@ -55,7 +55,7 @@
 // submenu
 .submenu {
     display: grid;
-    grid-template-columns: repeat(3, 50px) 1fr;
+    grid-template-columns: clamp(15px, 5vw, 100px) repeat(2, clamp(15px, 5vw, 100px)) 1fr;
     grid-template-rows: 1fr 95px;
     position: absolute;
     left: 0;
