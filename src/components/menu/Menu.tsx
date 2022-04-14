@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import { menuContent } from './menuComponents/content';
 import { MainMenu } from './menuComponents/MainMenu';
-import { Submenu } from './menuComponents/SubMenu';
+import { Submenu } from './menuComponents/Submenu';
 
 import openButton from '../../assets/images/menu/open.png';
 import closeButton from '../../assets/images/menu/close.png';

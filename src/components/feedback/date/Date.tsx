@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react';
+import { FC, useState, useEffect, FormEvent } from 'react';
 import {
     currentDate,
     currentMonth,
@@ -19,12 +19,15 @@ export const Date: FC = () => {
         return value.toString().length === 2 ? value : `0${value}`;
     };
 
-    const selectDate = (e: any) => {
-        const selectedValue = e.target.valueAsDate;
-        const myMonth = selectedValue.getMonth() + 1;
-        const selectedMonth = checkMonth(myMonth);
-        const result = `${selectedValue.getFullYear()}-${selectedMonth}-${selectedValue.getDate()}`;
-        setSelectedDate(result);
+    const selectDate = (e: FormEvent<HTMLInputElement>) => {
+        const elem = e.target as HTMLInputElement;
+        const selectedValue = elem.valueAsDate;
+        if (selectedValue !== null) {
+            const myMonth = selectedValue.getMonth() + 1;
+            const selectedMonth = checkMonth(myMonth);
+            const result = `${selectedValue.getFullYear()}-${selectedMonth}-${selectedValue.getDate()}`;
+            setSelectedDate(result);
+        }
     };
 
     return (

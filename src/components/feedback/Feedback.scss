@@ -46,7 +46,7 @@
 
 // SUBSCRIBE BUTTON
 .feedback_subscribe {
-    @include textSettings($fontSize: 16px, $fontColor: $fontColorDark,  $lineHeight: 20px);
+    @include textSettings($fontSize: 16px, $fontColor: $fontColorDark, $lineHeight: 20px);
     @include feedbackButtonAndInput;
     width: 141px;
     margin-top: 20px;
@@ -56,4 +56,37 @@
     &:hover {
         background-color: #75FF72;
     }
+}
+
+// DATE, TIME TYPES INPUT 
+input[type="date"], input[type="time"] {
+    position: relative;
+}
+
+input[type="date"]:after, input[type="time"]:after {
+    content: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-inner-spin-button {
+    z-index: 1;
+}
+
+input[type="date"]::-webkit-clear-button,
+input[type="time"]::-webkit-clear-button {
+    z-index: 1;
 }
