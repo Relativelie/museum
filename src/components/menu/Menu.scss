@@ -34,9 +34,13 @@
 
         & .mainMenuContent_elem {
             @include menuTextSettings($fontSize: 16px, $lineHeight: 24px);
-            margin-right: 30px;
+            margin-right: $distanceBetweenChild;
             margin-top: 10px;
             cursor: pointer;
+
+            &:hover {
+                text-shadow: 0 1px 10px #ffffff;
+            }
         }
 
         & .mainMenuContent_active {
@@ -48,8 +52,8 @@
     }
 }
 
-// Submenu
-.Submenu {
+// submenu
+.submenu {
     display: grid;
     grid-template-columns: repeat(3, 50px) 1fr;
     grid-template-rows: 1fr 95px;
@@ -62,20 +66,20 @@
     z-index: -1;
 }
 
-.Submenu_inactive {
+.submenu_inactive {
     margin-top: -200px
 }
 
-.SubmenuContent {
+.submenuContent {
     grid-column: 4;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-row-gap: 30px;
+    grid-row-gap: $distanceBetweenChild;
     grid-auto-flow: column;
     list-style-type: none;
 
-    & .SubmenuContent_elem {
+    & .submenuContent_elem {
         @include menuTextSettings($fontSize: 14px, $lineHeight: 21px);
         cursor: pointer;
     }
@@ -149,19 +153,19 @@
     }
 
     // SUB MENU
-    .Submenu {
+    .submenu {
         position: static;
         display: flex;
-        margin: 30px 82px;
+        margin: $distanceBetweenChild 82px;
         transition: none;
     }
 
-    .SubmenuContent {
+    .submenuContent {
         display: flex;
         flex-direction: column;
     }
 
-    .Submenu_inactive {
+    .submenu_inactive {
         margin-top: 0px
     }
 }

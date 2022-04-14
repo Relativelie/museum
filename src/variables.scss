@@ -1,5 +1,4 @@
-$fontFamily: 'Roboto',
-sans-serif;
+$fontFamily: 'Roboto', sans-serif;
 $fontColorLight: #FFFFFF;
 $fontColorDark: #0B0A0D;
 $bgDark: #0B0A0D;
@@ -7,6 +6,7 @@ $bgLight: #FFFFFF;
 $fontSizeTitles: 80px;
 $fontSizeTitlesMob: 40px;
 $defaultMargin: clamp(15px, 5vw, 100px);
+$distanceBetweenChild: 30px;
 
 @mixin titles($titleColor) {
     font-size: $fontSizeTitles;

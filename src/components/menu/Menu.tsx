@@ -67,7 +67,6 @@ export const Menu = () => {
                             isActive={isActive}
                         />
                     </MainMenu>
-
                 </div>
                 <img
                     className={`menuMobileButtons ${mobMenuBtnClass}`}
@@ -79,7 +78,6 @@ export const Menu = () => {
                     alt="menu button"
                 />
             </nav>
-
         </div>
     );
 };

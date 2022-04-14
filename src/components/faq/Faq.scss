@@ -27,14 +27,14 @@ $activeBorder: 1px solid rgba(230, 210, 210) !important;
 
     & .faqContent_question {
         @include textSettings($fontSize: 24px, $fontColor: $fontColorLight,  $lineHeight: 20px);
-        padding: 30px 0;
+        padding: $distanceBetweenChild 0;
         list-style-type: none;
         cursor: pointer;
     }
 
     & .faqContent_answer {
         @include textSettings($fontSize: 16px, $fontColor: $fontColorLight,  $lineHeight: 20px);
-        margin-bottom: 30px;
+        margin-bottom: $distanceBetweenChild;
     }
 }
 

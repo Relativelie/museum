@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react';
 
 export const Submenu = ({ content, activeMenuElem, isActive }: any) => {
-    const [inactiveEl, setInactiveEl] = useState('Submenu_inactive');
+    const [inactiveEl, setInactiveEl] = useState('submenu_inactive');
 
     useEffect(() => {
-        if (!isActive && inactiveEl !== 'Submenu_inactive') setInactiveEl('Submenu_inactive');
+        if (!isActive && inactiveEl !== 'submenu_inactive') setInactiveEl('submenu_inactive');
         else setInactiveEl('');
     });
 
     return (
-        <div className={`Submenu ${inactiveEl}`}>
-            <div className="SubmenuContent">
+        <div className={`submenu ${inactiveEl}`}>
+            <div className="submenuContent">
                 {content.map(((elem: any) => {
                     if (elem.id === activeMenuElem) {
                         return elem.content.map(((contentElem: any) => {
                             return (
-                                <li className="SubmenuContent_elem" key={`Submenu-${contentElem.id}`}>
+                                <li className="submenuContent_elem" key={`submenu-${contentElem.id}`}>
                                     {contentElem.text}
                                 </li>
                             );
