@@ -17,14 +17,17 @@ export const Menu = () => {
     const [menuIsOpen, setMenuIsOpen] = useState(false);
     const [openCloseImg, setOpenCloseImg] = useState(openButton);
     const [mobMenuBtnClass, setMobMenuBtnClass] = useState('menuMobileButtons_open');
+    const [mobMenuContainerClass, setMobMenuContainerClass] = useState('menuMobileContainer_closed');
 
     useEffect(() => {
         if (menuIsOpen) {
             setOpenCloseImg(closeButton);
             setMobMenuBtnClass('menuMobileButtons_close');
+            setMobMenuContainerClass('');
         } else {
             setOpenCloseImg(openButton);
             setMobMenuBtnClass('menuMobileButtons_open');
+            setMobMenuContainerClass('menuMobileContainer_closed');
         }
     }, [menuIsOpen]);
 
@@ -56,6 +59,7 @@ export const Menu = () => {
                         content={content}
                         changeSubmenuVisible={changeSubmenuVisible}
                         activeMenuId={activeMenuId}
+                        mobMenuClosed={mobMenuContainerClass}
                     >
                         <Submenu
                             content={content}

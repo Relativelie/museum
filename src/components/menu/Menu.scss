@@ -97,6 +97,13 @@
 }
 
 @media all and (max-width: 700px) {
+    .menu {
+        height: 150px;
+    }
+
+    .menu_nav {
+        background-color: $bgDark;
+    }
 
     // MAIN MENU
     .menu_nav_components {
@@ -118,13 +125,17 @@
         display: flex;
     }
 
+    .menuMobileContainer_closed {
+        display: none !important;
+    }
+
     .mainMenuContent {
         flex-direction: column;
-        position: absolute;
+        position: fixed;
         right: 0;
         top: 97px;
         padding-left: 50px;
-        height: 100vh;
+        min-height: 100vh;
         width: calc(100% - 129px);
         background-color: $bgDark;
     }

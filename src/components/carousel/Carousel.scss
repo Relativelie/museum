@@ -33,6 +33,7 @@
     align-items: center;
 }
 
+// BUTTONS NEXT AND PREV
 .slick-arrow {
     top: auto !important;
     bottom: -90px !important;
@@ -45,12 +46,27 @@
 }
 
 .slick-prev {
-    left: 42% !important;
+    left: 42vw !important;
+    background-position: center left;
     background-image: url("../../assets/images/carousel/prev.png") !important;
 }
 
 .slick-next {
-    right: 42% !important;
-    background-position: right !important;
+    right: 42vw !important;
+    background-position: center right;
     background-image: url("../../assets/images/carousel/next.png") !important;
+}
+
+@media all and (max-width: 800px) {
+    .slick-arrow {
+        width: 100px !important;
+    }
+
+    .slick-prev {
+        left: 44px !important;
+    }
+    
+    .slick-next {
+        right: 44px !important;
+    }
 }

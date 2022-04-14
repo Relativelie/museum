@@ -51,7 +51,6 @@ export const menuContent = [
             { id: 10052, text: 'Подпункт меню5', url: '/someUrl' },
             { id: 10053, text: 'Подпункт меню', url: '/someUrl' },
             { id: 10054, text: 'Подпункт меню', url: '/someUrl' },
-            { id: 10055, text: 'Подпункт меню', url: '/someUrl' },
         ],
     },
 ];

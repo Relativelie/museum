@@ -32,7 +32,6 @@
 .feedback_input {
     @include textSettings($fontSize: 14px, $fontColor: $fontColorDark, $lineHeight: 20px);
     @include feedbackButtonAndInput;
-    // width: 400px;
     padding: 14px 15px 16px 20px;
 
     &::placeholder {
