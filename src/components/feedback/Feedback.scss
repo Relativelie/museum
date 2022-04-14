@@ -1,13 +1,13 @@
 @import "../../variables";
 
 .feedback {
-    padding: 50px 100px;
+    padding: 50px $defaultMargin;
     background-color: $bgLight;
 }
 
 // TITLE AND DESCRIPTION
 .feedback_title {
-    @include titels($titleColor: $fontColorDark);
+    @include titles($titleColor: $fontColorDark);
     margin: 0 0 30px 0;
 }
 

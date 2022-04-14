@@ -10,7 +10,7 @@
         left: 50px;
 
         & h3 {
-            @include titels($titleColor: $fontColorLight);
+            @include titles($titleColor: $fontColorLight);
             margin: 0;
         }
     }

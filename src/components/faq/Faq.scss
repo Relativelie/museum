@@ -10,7 +10,7 @@ $activeBorder: 1px solid rgba(230, 210, 210) !important;
 }
 
 .faq_title {
-    @include titels($titleColor: $fontColorLight);
+    @include titles($titleColor: $fontColorLight);
     margin: 0;
 }
 

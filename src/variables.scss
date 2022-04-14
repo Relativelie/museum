@@ -4,11 +4,11 @@ $fontColorLight: #FFFFFF;
 $fontColorDark: #0B0A0D;
 $bgDark: #0B0A0D;
 $bgLight: #FFFFFF;
-$fontSizeTitels: 80px;
+$fontSizeTitles: 80px;
 $defaultMargin: 100px;
 
-@mixin titels($titleColor) {
-    font-size: $fontSizeTitels;
+@mixin titles($titleColor) {
+    font-size: $fontSizeTitles;
     font-weight: 500;
     line-height: 106%;
     letter-spacing: -0.03em;
@@ -22,6 +22,14 @@ $defaultMargin: 100px;
     font-weight: 400;
     font-family: $fontFamily;
     color: $fontColor;
+}
+
+@mixin menuTextSettings($fontSize, $lineHeight) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-weight: 500;
+    font-family: $fontFamily;
+    color: $fontColorLight;
 }
 
 @mixin feedbackButtonAndInput {
