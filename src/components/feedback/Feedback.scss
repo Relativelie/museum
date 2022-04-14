@@ -16,7 +16,14 @@
     margin: 0;
 }
 
-// INPUTS
+// FORM
+
+.feedback_form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, min(90%, 400px));
+    max-width: 850px;
+    grid-gap: 20px;
+}
 .incorrectInputValue {
     outline-color: red !important;
     border: 1px solid red !important;
@@ -25,9 +32,8 @@
 .feedback_input {
     @include textSettings($fontSize: 14px, $fontColor: $fontColorDark, $lineHeight: 20px);
     @include feedbackButtonAndInput;
-    width: 400px;
+    // width: 400px;
     padding: 14px 15px 16px 20px;
-    margin: 10px;
 
     &::placeholder {
         color: rgba(0, 0, 0, 0.6);
@@ -44,7 +50,7 @@
     @include textSettings($fontSize: 16px, $fontColor: $fontColorDark,  $lineHeight: 20px);
     @include feedbackButtonAndInput;
     width: 141px;
-    margin: 10px;
+    margin-top: 20px;
     background-color: transparent;
     transition: background-color .7s ease;
 

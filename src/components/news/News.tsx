@@ -19,7 +19,6 @@ export const News: FC = () => {
                     );
                 }))}
             </div>
-
         </div>
     );
 };

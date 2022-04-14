@@ -1,11 +1,12 @@
 @import "../../variables";
 
 .news {
-    margin: 0 100px;
+    margin: 0 $defaultMargin 109px $defaultMargin;
 }
 
 .newsTitle {
-    @include titles($titleColor: $fontColorLight)
+    @include titles($titleColor: $fontColorLight);
+    margin: 0 0 30px 0;
 }
 
 .newsContent {
@@ -17,17 +18,19 @@
 
     & .newsContent_title,
     .newsContent_description {
+        font-weight: 500;
+        color: $fontColorLight;
         font-family: $fontFamily;
-        // color: $fontColor;
     }
 
     & .newsContent_title {
-        margin: 0 0 10px 0;
         font-size: 16px;
+        margin: 30px 0 10px 0;
     }
 
     & .newsContent_description {
-        margin: 0;
         font-size: 14px;
+        line-height: 21px;
+        margin: 0;
     }
 }
