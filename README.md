@@ -5,6 +5,8 @@ Used:
 - react
 - scss
 
+Online demo: https://relativelie.github.io/museum/
+
 ## How to build
 1. Clone repository
 ``git clone git@github.com:Relativelie/museum.git /path/to/map``
