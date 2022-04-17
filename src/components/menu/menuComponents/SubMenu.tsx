@@ -20,11 +20,10 @@ interface Props {
 
 export const Submenu: FC<Props> = ({ content, activeMenuElem, isActive }) => {
     const [inactiveEl, setInactiveEl] = useState('submenu_inactive');
-
     useEffect(() => {
         if (!isActive && inactiveEl !== 'submenu_inactive') setInactiveEl('submenu_inactive');
         else setInactiveEl('');
-    }, [isActive, inactiveEl]);
+    }, [isActive]);
 
     return (
         <div className={`submenu ${inactiveEl}`}>

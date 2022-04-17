@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Submenu component snapshot - submenu active 1`] = `
+<div
+  className="submenu submenu_inactive"
+>
+  <div
+    className="submenuContent"
+  >
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню
+    </li>
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню2
+    </li>
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню
+    </li>
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню
+    </li>
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню2
+    </li>
+  </div>
+</div>
+`;
+
+exports[`Submenu component snapshot - submenu non-active 1`] = `
+<div
+  className="submenu submenu_inactive"
+>
+  <div
+    className="submenuContent"
+  >
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню
+    </li>
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню2
+    </li>
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню
+    </li>
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню
+    </li>
+    <li
+      className="submenuContent_elem"
+    >
+      Подпункт меню2
+    </li>
+  </div>
+</div>
+`;

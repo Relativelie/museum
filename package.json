@@ -14,6 +14,7 @@
     "react-dom": "17.x",
     "react-scripts": "5.0.0",
     "react-slick": "^0.28.1",
+    "react-test-renderer": "^17.0.2",
     "regenerator-runtime": "^0.13.9",
     "slick-carousel": "^1.8.1",
     "ts-jest": "^27.1.4",
@@ -22,6 +23,7 @@
   },
   "scripts": {
     "start": "webpack serve --config webpack.dev.config.ts",
+    "test": "jest",
     "build": "webpack --config webpack.dev.config.ts",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
@@ -57,6 +59,7 @@
     "@types/react": "^17.0.43",
     "@types/react-dom": "^17.0.14",
     "@types/react-slick": "^0.23.8",
+    "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
     "babel-loader": "^8.2.4",
