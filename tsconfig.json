@@ -13,7 +13,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["react/next", "jest"],
+    "types": ["react/next", "jest", "node"],
   },
-  "include": ["src", "__tests__"]
+  "include": ["src", "__tests__", "__mocks__"]
 }

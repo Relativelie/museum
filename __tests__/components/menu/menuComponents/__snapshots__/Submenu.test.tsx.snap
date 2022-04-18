@@ -2,7 +2,7 @@
 
 exports[`Submenu component snapshot - submenu active 1`] = `
 <div
-  className="submenu submenu_inactive"
+  className="submenu "
 >
   <div
     className="submenuContent"
@@ -38,7 +38,7 @@ exports[`Submenu component snapshot - submenu active 1`] = `
 
 exports[`Submenu component snapshot - submenu non-active 1`] = `
 <div
-  className="submenu submenu_inactive"
+  className="submenu "
 >
   <div
     className="submenuContent"
