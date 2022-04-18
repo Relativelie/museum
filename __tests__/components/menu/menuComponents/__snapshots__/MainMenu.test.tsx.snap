@@ -10,7 +10,7 @@ exports[`Main menu component snapshot - main active menu 1`] = `
     src="test-file-stub"
   />
   <ul
-    className="mainMenuContent menuMobileContainer_closed"
+    className="mainMenuContent menuMobileContainer_isClose"
   >
     <div
       className="mainMenuContent_container "
@@ -96,7 +96,7 @@ exports[`Main menu component snapshot - main non-active menu 1`] = `
     src="test-file-stub"
   />
   <ul
-    className="mainMenuContent menuMobileContainer_closed"
+    className="mainMenuContent menuMobileContainer_isClose"
   >
     <div
       className="mainMenuContent_container "

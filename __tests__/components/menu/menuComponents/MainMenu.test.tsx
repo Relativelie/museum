@@ -1,6 +1,8 @@
-import { fireEvent, render } from '@testing-library/react';
-import { screen } from '@testing-library/dom';
+import { render } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/dom';
 import { act, create } from 'react-test-renderer';
+import userEvent from '@testing-library/user-event';
+
 import { menuContent } from '../../../../src/components/menu/menuComponents/content';
 import { MainMenu } from '../../../../src/components/menu/menuComponents/MainMenu';
 
@@ -13,7 +15,7 @@ describe('Main menu component', () => {
                 content={menuContent}
                 changeSubmenuVisible={someFunc}
                 activeMenuId={1002}
-                mobMenuClosed="menuMobileContainer_closed"
+                mobMenuClosed="menuMobileContainer_isClose"
             />);
         });
         expect(root.toJSON()).toMatchSnapshot();
@@ -27,7 +29,7 @@ describe('Main menu component', () => {
                 content={menuContent}
                 changeSubmenuVisible={someFunc}
                 activeMenuId={-1}
-                mobMenuClosed="menuMobileContainer_closed"
+                mobMenuClosed="menuMobileContainer_isClose"
             />);
         });
         expect(root.toJSON()).toMatchSnapshot();
@@ -40,11 +42,11 @@ describe('Main menu component', () => {
                 content={menuContent}
                 changeSubmenuVisible={someFunc}
                 activeMenuId={-1}
-                mobMenuClosed="menuMobileContainer_closed"
+                mobMenuClosed="menuMobileContainer_isClose"
             />,
         );
-        fireEvent.click(screen.getByText(/пункт 2/i));
-        fireEvent.click(screen.getByText(/пункт 2/i));
+        userEvent.click(screen.getByText(/пункт 2/i));
+        userEvent.click(screen.getByText(/пункт 2/i));
         expect(someFunc).toHaveBeenCalledTimes(2);
     });
 
@@ -55,10 +57,10 @@ describe('Main menu component', () => {
                 content={menuContent}
                 changeSubmenuVisible={someFunc}
                 activeMenuId={-1}
-                mobMenuClosed="menuMobileContainer_closed"
+                mobMenuClosed="menuMobileContainer_isClose"
             />,
         );
-        fireEvent.click(screen.getByText(/пункт 2/i));
+        userEvent.click(screen.getByText(/пункт 2/i));
         expect(someFunc).toHaveBeenCalledTimes(1);
     });
 
@@ -69,7 +71,7 @@ describe('Main menu component', () => {
                 content={menuContent}
                 changeSubmenuVisible={someFunc}
                 activeMenuId={-1}
-                mobMenuClosed="menuMobileContainer_closed"
+                mobMenuClosed="menuMobileContainer_isClose"
             />,
         );
         fireEvent.keyPress(screen.getByText(/пункт 2/i), { key: '0', code: 'Digit0', charCode: 48 });
@@ -83,7 +85,7 @@ describe('Main menu component', () => {
                 content={menuContent}
                 changeSubmenuVisible={someFunc}
                 activeMenuId={-1}
-                mobMenuClosed="menuMobileContainer_closed"
+                mobMenuClosed="menuMobileContainer_isClose"
             />,
         );
         fireEvent.keyPress(screen.getByText(/пункт 2/i), { key: '0', code: 'Digit0', charCode: 48 });

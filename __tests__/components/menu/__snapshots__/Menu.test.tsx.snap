@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu component snapshot - menu component without open submenu 1`] = `
+<div
+  className="menu"
+>
+  <nav
+    className="menu_nav"
+  >
+    <div
+      className="menu_nav_components"
+    >
+      <div
+        className="mainMenu"
+      >
+        <img
+          alt="logo"
+          className="logo"
+          src="test-file-stub"
+        />
+        <ul
+          className="mainMenuContent menuMobileContainer_isClose"
+        >
+          <div
+            className="mainMenuContent_container "
+          >
+            <li
+              className="mainMenuContent_elem"
+              data-elem="1001"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              Пункт 1
+            </li>
+          </div>
+          <div
+            className="mainMenuContent_container "
+          >
+            <li
+              className="mainMenuContent_elem"
+              data-elem="1002"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              Пункт 2
+            </li>
+          </div>
+          <div
+            className="mainMenuContent_container "
+          >
+            <li
+              className="mainMenuContent_elem"
+              data-elem="1003"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              Пункт 3
+            </li>
+          </div>
+          <div
+            className="mainMenuContent_container "
+          >
+            <li
+              className="mainMenuContent_elem"
+              data-elem="1004"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              Пункт 4
+            </li>
+          </div>
+          <div
+            className="mainMenuContent_container "
+          >
+            <li
+              className="mainMenuContent_elem"
+              data-elem="1005"
+              onClick={[Function]}
+              onKeyPress={[Function]}
+              role="menuitem"
+              tabIndex={0}
+            >
+              Пункт 5
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <img
+      alt="menu button"
+      className="menuMobileButtons menuMobileButtons_toOpen"
+      onClick={[Function]}
+      onKeyPress={[Function]}
+      role="menuitem"
+      src="test-file-stub"
+      tabIndex={0}
+    />
+  </nav>
+</div>
+`;

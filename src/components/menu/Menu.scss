@@ -90,12 +90,12 @@
     display: none;
 }
 
-.menuMobileButtons_open {
+.menuMobileButtons_toOpen {
     width: 36px;
     height: 24px;
 }
 
-.menuMobileButtons_close {
+.menuMobileButtons_toClose {
     width: 28px;
     height: 28px;
 }
@@ -129,7 +129,7 @@
         display: flex;
     }
 
-    .menuMobileContainer_closed {
+    .menuMobileContainer_isClose {
         display: none !important;
     }
 

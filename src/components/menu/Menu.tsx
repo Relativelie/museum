@@ -16,19 +16,19 @@ export const Menu = () => {
     // For mobile.
     const [menuIsOpen, setMenuIsOpen] = useState(false);
     const [openCloseImg, setOpenCloseImg] = useState(openButton);
-    const [mobMenuBtnClass, setMobMenuBtnClass] = useState('menuMobileButtons_open');
-    const [mobMenuContainerClass, setMobMenuContainerClass] = useState('menuMobileContainer_closed');
+    const [mobMenuBtnClass, setMobMenuBtnClass] = useState('menuMobileButtons_toOpen');
+    const [mobMenuContainerClass, setMobMenuContainerClass] = useState('menuMobileContainer_isClose');
 
     // For mobile.
     useEffect(() => {
         if (menuIsOpen) {
             setOpenCloseImg(closeButton);
-            setMobMenuBtnClass('menuMobileButtons_close');
+            setMobMenuBtnClass('menuMobileButtons_toClose');
             setMobMenuContainerClass('');
         } else {
             setOpenCloseImg(openButton);
-            setMobMenuBtnClass('menuMobileButtons_open');
-            setMobMenuContainerClass('menuMobileContainer_closed');
+            setMobMenuBtnClass('menuMobileButtons_toOpen');
+            setMobMenuContainerClass('menuMobileContainer_isClose');
         }
     }, [menuIsOpen]);
 
