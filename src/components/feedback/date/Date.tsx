@@ -11,11 +11,11 @@ import {
 export const Date: FC = () => {
     const [selectedDate, setSelectedDate] = useState('');
     useEffect(() => {
-        const date = `${currentYear}-${checkMonth(currentMonth)}-${currentDate}`;
+        const date = `${currentYear}-${checkMonthAndDay(currentMonth)}-${checkMonthAndDay(currentDate)}`;
         setSelectedDate(date);
     }, []);
 
-    const checkMonth = (value: number) => {
+    const checkMonthAndDay = (value: number) => {
         return value.toString().length === 2 ? value : `0${value}`;
     };
 
@@ -24,8 +24,9 @@ export const Date: FC = () => {
         const selectedValue = elem.valueAsDate;
         if (selectedValue !== null) {
             const myMonth = selectedValue.getMonth() + 1;
-            const selectedMonth = checkMonth(myMonth);
-            const result = `${selectedValue.getFullYear()}-${selectedMonth}-${selectedValue.getDate()}`;
+            const selectedMonth = checkMonthAndDay(myMonth);
+            const selectedDay = checkMonthAndDay(selectedValue.getDate());
+            const result = `${selectedValue.getFullYear()}-${selectedMonth}-${selectedDay}`;
             setSelectedDate(result);
         }
     };
@@ -35,10 +36,11 @@ export const Date: FC = () => {
             className="feedback_input"
             name="date"
             type="date"
+            data-testid="form-field-date"
             value={selectedDate}
             onChange={(e) => selectDate(e)}
-            min={`${currentYear}-${checkMonth(currentMonth)}-${currentDate}`}
-            max={`${futureYear}-${checkMonth(futureMonth)}-${futureDate}`}
+            min={`${currentYear}-${checkMonthAndDay(currentMonth)}-${currentDate}`}
+            max={`${futureYear}-${checkMonthAndDay(futureMonth)}-${futureDate}`}
         />
     );
 };

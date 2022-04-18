@@ -8,13 +8,13 @@ import '@testing-library/jest-dom';
 import { faqContent } from '../../../../src/components/faq/content';
 
 describe('FAQ component', () => {
-    // test('snapshot - FAQ component', () => {
-    //     let root: any;
-    //     act(() => {
-    //         root = create(<Faq />);
-    //     });
-    //     expect(root.toJSON()).toMatchSnapshot();
-    // });
+    test('snapshot - FAQ component', () => {
+        let root: any;
+        act(() => {
+            root = create(<Faq />);
+        });
+        expect(root.toJSON()).toMatchSnapshot();
+    });
 
     test('snapshot - FAQ component', () => {
         render((<Faq />));
