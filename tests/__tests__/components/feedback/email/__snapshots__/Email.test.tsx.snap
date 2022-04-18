@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feedback - Email component snapshot - email component 1`] = `
+<input
+  className="feedback_input "
+  data-testid="form-field-email"
+  name="email"
+  onBlur={[Function]}
+  onKeyUp={[Function]}
+  placeholder="Email"
+  type="email"
+/>
+`;

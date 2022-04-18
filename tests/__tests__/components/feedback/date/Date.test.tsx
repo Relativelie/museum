@@ -19,7 +19,6 @@ describe('Feedback - Date component', () => {
         render(<Date />);
         const inputEl = screen.getByTestId('form-field-date');
         userEvent.type(inputEl, '2022-04-01');
-
         expect(screen.getByTestId('form-field-date')).toHaveValue('2022-04-01');
     });
 });

@@ -11,9 +11,7 @@ export const Email: FC = () => {
     });
 
     const checkEmail = (eventType: string, event: SyntheticEvent<EventTarget>) => {
-        if (!(event.target instanceof EventTarget)) {
-            return;
-        } else if (eventType === 'blur' || eventType === 'Enter') {
+        if (eventType === 'blur' || eventType === 'Enter') {
             const elem = event.target as HTMLInputElement;
             setIsCorrect(rule.test(elem.value));
             elem.blur();
@@ -25,6 +23,7 @@ export const Email: FC = () => {
             className={`feedback_input ${incorrectClass}`}
             name="email"
             type="email"
+            data-testid="form-field-email"
             placeholder="Email"
             onBlur={(e) => checkEmail(e.type, e)}
             onKeyUp={(e) => checkEmail(e.key, e)}
