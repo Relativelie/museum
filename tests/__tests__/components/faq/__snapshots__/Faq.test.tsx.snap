@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FAQ component snapshot - FAQ component 1`] = `
+<div
+  className="faq"
+>
+  <h3
+    className="faq_title"
+  >
+    FAQ
+  </h3>
+  <div
+    className="faqContent"
+  >
+    <details
+      className="faqContent_elem"
+    >
+      <summary
+        className="faqContent_question"
+      >
+        Как добраться до музея?
+      </summary>
+      <p
+        className="faqContent_answer"
+      >
+        В Национальный музей Республики Татарстан можно добраться общественным транспортом:1) «Станция метро «Кремлевская», а затем по направлению к Кремлю пройдя 5 минут пешком;
+      </p>
+    </details>
+    <details
+      className="faqContent_elem"
+    >
+      <summary
+        className="faqContent_question"
+      >
+        Есть ли поблизости удобная парковка?
+      </summary>
+      <p
+        className="faqContent_answer"
+      >
+        some text
+      </p>
+    </details>
+    <details
+      className="faqContent_elem"
+    >
+      <summary
+        className="faqContent_question"
+      >
+        Можно ли воспользоваться аудиогидом?
+      </summary>
+      <p
+        className="faqContent_answer"
+      >
+        some text
+      </p>
+    </details>
+  </div>
+</div>
+`;

@@ -5,8 +5,8 @@ import { render } from '@testing-library/react';
 import { act, create } from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
-import { Menu } from '../../../src/components/menu/Menu';
-import { menuContent } from '../../../src/components/menu/menuComponents/content';
+import { Menu } from '../../../../src/components/menu/Menu';
+import { menuContent } from '../../../../src/components/menu/menuComponents/content';
 
 describe('Menu component', () => {
     test('snapshot - menu component without open submenu', () => {

@@ -3,8 +3,8 @@ import { fireEvent, screen } from '@testing-library/dom';
 import { act, create } from 'react-test-renderer';
 import userEvent from '@testing-library/user-event';
 
-import { menuContent } from '../../../../src/components/menu/menuComponents/content';
-import { MainMenu } from '../../../../src/components/menu/menuComponents/MainMenu';
+import { menuContent } from '../../../../../src/components/menu/menuComponents/content';
+import { MainMenu } from '../../../../../src/components/menu/menuComponents/MainMenu';
 
 describe('Main menu component', () => {
     test('snapshot - main active menu', () => {
