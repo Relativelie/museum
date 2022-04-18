@@ -16,7 +16,7 @@ describe('Feedback - Email component', () => {
         expect(root.toJSON()).toMatchSnapshot();
     });
 
-    test('change input value with enter press - correct value', () => {
+    test('change email value with enter press - correct value', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
         userEvent.type(inputEl, 'test@test.test');
@@ -25,7 +25,7 @@ describe('Feedback - Email component', () => {
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input');
     });
 
-    test('change input value with blur activate - correct value', () => {
+    test('change email value with blur activate - correct value', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
         userEvent.type(inputEl, 'correct.@correct.ty');
@@ -34,7 +34,7 @@ describe('Feedback - Email component', () => {
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input');
     });
 
-    test('change input value with enter press - incorrect value: without part of domain name', () => {
+    test('change email value with enter press - incorrect value: without part of domain name', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
         userEvent.type(inputEl, 'test@test.');
@@ -43,7 +43,7 @@ describe('Feedback - Email component', () => {
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
     });
 
-    test('change input value with blur activate - incorrect value: without domain name', () => {
+    test('change email value with blur activate - incorrect value: without domain name', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
         userEvent.type(inputEl, 'test@');
@@ -52,7 +52,7 @@ describe('Feedback - Email component', () => {
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
     });
 
-    test('change input value with enter press - incorrect value: without unique user name', () => {
+    test('change email value with enter press - incorrect value: without unique user name', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
         userEvent.type(inputEl, '@test.test');
@@ -61,7 +61,7 @@ describe('Feedback - Email component', () => {
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
     });
 
-    test('change input value with blur activate - incorrect value: without at sign', () => {
+    test('change email value with blur activate - incorrect value: without at sign', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
         userEvent.type(inputEl, 'testtest.test');
@@ -70,7 +70,7 @@ describe('Feedback - Email component', () => {
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
     });
 
-    test('change input value with blur activate - empty value', () => {
+    test('change email value with blur activate - empty value', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
         userEvent.click(inputEl);
@@ -79,12 +79,34 @@ describe('Feedback - Email component', () => {
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
     });
 
-    test('change input value with enter press - incorrect value: only spaces', () => {
+    test('change email value with enter press - incorrect value: only spaces', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
         userEvent.type(inputEl, '     ');
         expect(screen.getByTestId('form-field-email')).toHaveValue('');
         fireEvent.keyUp(screen.getByTestId('form-field-email'), { key: 'Enter', code: 'Enter', charCode: 0 });
+        expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
+    });
+
+    test('add incorrect value, then add correct value', () => {
+        render(<Email />);
+        const inputEl = screen.getByTestId('form-field-email');
+        userEvent.type(inputEl, 'freef');
+        fireEvent.keyPress(screen.getByTestId('form-field-email'), { key: 'Enter', code: 'Enter', charCode: 0 });
+        expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
+        userEvent.type(inputEl, 'test@test.test');
+        userEvent.tab();
+        expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input');
+    });
+
+    test('add correct value, then add incorrect value', () => {
+        render(<Email />);
+        const inputEl = screen.getByTestId('form-field-email');
+        userEvent.type(inputEl, 'test@test.test');
+        userEvent.tab();
+        expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input');
+        userEvent.type(inputEl, 'f');
+        fireEvent.keyPress(screen.getByTestId('form-field-email'), { key: 'Enter', code: 'Enter', charCode: 0 });
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
     });
 });

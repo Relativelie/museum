@@ -64,7 +64,7 @@ describe('Feedback - Telephone component', () => {
         expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
     });
 
-    test('change input value with blur activate - empty value', () => {
+    test('change tel value to empty value', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.click(inputEl);
@@ -73,11 +73,33 @@ describe('Feedback - Telephone component', () => {
         expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
     });
 
-    test('change input value with enter press - incorrect value: only spaces', () => {
+    test('change tel value to incorrect value: only spaces', () => {
+        render(<Telephone />);
+        const inputEl = screen.getByTestId('form-field-tel');
+        userEvent.type(inputEl, '     ');
+        expect(screen.getByTestId('form-field-tel')).toHaveValue('');
+        fireEvent.keyPress(screen.getByTestId('form-field-tel'), { key: 'Enter', code: 'Enter', charCode: 0 });
+        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
+    });
+
+    test('add incorrect value, then add correct value', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, '1234567');
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('');
+        fireEvent.keyPress(screen.getByTestId('form-field-tel'), { key: 'Enter', code: 'Enter', charCode: 0 });
+        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
+        userEvent.type(inputEl, '12345678901');
+        userEvent.tab();
+        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input');
+    });
+
+    test('add correct value, then add incorrect value', () => {
+        render(<Telephone />);
+        const inputEl = screen.getByTestId('form-field-tel');
+        userEvent.type(inputEl, '12345678901');
+        userEvent.tab();
+        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input');
+        userEvent.type(inputEl, '1');
         fireEvent.keyPress(screen.getByTestId('form-field-tel'), { key: 'Enter', code: 'Enter', charCode: 0 });
         expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
     });
