@@ -19,6 +19,7 @@ export const Menu = () => {
     const [mobMenuBtnClass, setMobMenuBtnClass] = useState('menuMobileButtons_open');
     const [mobMenuContainerClass, setMobMenuContainerClass] = useState('menuMobileContainer_closed');
 
+    // For mobile.
     useEffect(() => {
         if (menuIsOpen) {
             setOpenCloseImg(closeButton);

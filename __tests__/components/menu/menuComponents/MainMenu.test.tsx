@@ -18,6 +18,7 @@ describe('Main menu component', () => {
         });
         expect(root.toJSON()).toMatchSnapshot();
     });
+
     test('snapshot - main non-active menu', () => {
         const someFunc = jest.fn();
         let root: any;
@@ -32,7 +33,7 @@ describe('Main menu component', () => {
         expect(root.toJSON()).toMatchSnapshot();
     });
 
-    test('click on the menu item', () => {
+    test('click on the menu item two times', () => {
         const someFunc = jest.fn();
         render(
             <MainMenu
@@ -47,7 +48,21 @@ describe('Main menu component', () => {
         expect(someFunc).toHaveBeenCalledTimes(2);
     });
 
-    test('key press on the menu item', () => {
+    test('click on the menu item once', () => {
+        const someFunc = jest.fn();
+        render(
+            <MainMenu
+                content={menuContent}
+                changeSubmenuVisible={someFunc}
+                activeMenuId={-1}
+                mobMenuClosed="menuMobileContainer_closed"
+            />,
+        );
+        fireEvent.click(screen.getByText(/пункт 2/i));
+        expect(someFunc).toHaveBeenCalledTimes(1);
+    });
+
+    test('key press on the menu item once', () => {
         const someFunc = jest.fn();
         render(
             <MainMenu
@@ -59,5 +74,20 @@ describe('Main menu component', () => {
         );
         fireEvent.keyPress(screen.getByText(/пункт 2/i), { key: '0', code: 'Digit0', charCode: 48 });
         expect(someFunc).toHaveBeenCalledTimes(1);
+    });
+
+    test('key press on the menu item once', () => {
+        const someFunc = jest.fn();
+        render(
+            <MainMenu
+                content={menuContent}
+                changeSubmenuVisible={someFunc}
+                activeMenuId={-1}
+                mobMenuClosed="menuMobileContainer_closed"
+            />,
+        );
+        fireEvent.keyPress(screen.getByText(/пункт 2/i), { key: '0', code: 'Digit0', charCode: 48 });
+        fireEvent.keyPress(screen.getByText(/пункт 2/i), { key: '0', code: 'Digit0', charCode: 48 });
+        expect(someFunc).toHaveBeenCalledTimes(2);
     });
 });

@@ -5,7 +5,7 @@ export const menuContent = [
         content: [
             { id: 10011, text: 'Подпункт меню1', url: '/someUrl' },
             { id: 10012, text: 'Подпункт меню', url: '/someUrl' },
-            { id: 10013, text: 'Подпункт меню1', url: '/someUrl' },
+            { id: 10013, text: 'Подпункт меню', url: '/someUrl' },
             { id: 10014, text: 'Подпункт меню', url: '/someUrl' },
             { id: 10015, text: 'Подпункт меню', url: '/someUrl' },
         ],
@@ -18,7 +18,7 @@ export const menuContent = [
             { id: 10022, text: 'Подпункт меню2', url: '/someUrl' },
             { id: 10023, text: 'Подпункт меню', url: '/someUrl' },
             { id: 10024, text: 'Подпункт меню', url: '/someUrl' },
-            { id: 10025, text: 'Подпункт меню2', url: '/someUrl' },
+            { id: 10025, text: 'Подпункт меню', url: '/someUrl' },
         ],
     },
     {
