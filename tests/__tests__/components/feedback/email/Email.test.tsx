@@ -36,7 +36,6 @@ describe('Feedback - Email component', () => {
     test('change input value with enter press - incorrect value: without part of domain name', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
-
         userEvent.type(inputEl, 'test@test.');
         expect(screen.getByTestId('form-field-email')).toHaveValue('test@test.');
         fireEvent.keyUp(screen.getByTestId('form-field-email'), { key: 'Enter', code: 13 });
@@ -61,7 +60,7 @@ describe('Feedback - Email component', () => {
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
     });
 
-    test('change input value with blur activate - incorrect value: without "at" sign', () => {
+    test('change input value with blur activate - incorrect value: without at sign', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
         userEvent.type(inputEl, 'testtest.test');
@@ -73,9 +72,18 @@ describe('Feedback - Email component', () => {
     test('change input value with blur activate - empty value', () => {
         render(<Email />);
         const inputEl = screen.getByTestId('form-field-email');
-        userEvent.type(inputEl, '');
+        userEvent.click(inputEl);
         expect(screen.getByTestId('form-field-email')).toHaveValue('');
         userEvent.tab();
+        expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
+    });
+
+    test('change input value with enter press - incorrect value: only spaces', () => {
+        render(<Email />);
+        const inputEl = screen.getByTestId('form-field-email');
+        userEvent.type(inputEl, '     ');
+        expect(screen.getByTestId('form-field-email')).toHaveValue('');
+        fireEvent.keyUp(screen.getByTestId('form-field-email'), { key: 'Enter', code: 'Enter', charCode: 0 });
         expect(screen.getByTestId('form-field-email')).toHaveClass('feedback_input incorrectInputValue');
     });
 });
