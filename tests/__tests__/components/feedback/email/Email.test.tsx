@@ -4,6 +4,7 @@ import { act, create } from 'react-test-renderer';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { fireEvent, screen } from '@testing-library/dom';
+
 import { Email } from '../../../../../src/components/feedback/email/Email';
 
 describe('Feedback - Email component', () => {

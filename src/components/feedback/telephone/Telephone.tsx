@@ -33,6 +33,7 @@ export const Telephone: FC = () => {
         <input
             className={`feedback_input ${isErrorPhone}`}
             type="text"
+            data-testid="form-field-tel"
             ref={inputPhone}
             onChange={phoneChange}
             placeholder="Телефон"
