@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feedback - Telephone component snapshot - telephone component 1`] = `
+<input
+  className="feedback_input "
+  data-testid="form-field-tel"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onKeyUp={[Function]}
+  placeholder="Телефон"
+  type="text"
+/>
+`;

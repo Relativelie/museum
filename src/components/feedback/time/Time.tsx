@@ -24,6 +24,7 @@ export const Time: FC = () => {
         className="feedback_input"
             name="time"
             type="time"
+            data-testid="form-field-time"
             value={selectedTime}
             onChange={(e) => selectTime(e)}
         />

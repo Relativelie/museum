@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feedback - Feedback component snapshot - Feedback component 1`] = `
+<div
+  className="news"
+>
+  <h3
+    className="newsTitle"
+  >
+    Новости
+  </h3>
+  <div
+    className="newsContent"
+  >
+    <div
+      className="newsContent_item"
+    >
+      <img
+        alt="news"
+        src="test-file-stub"
+      />
+      <h4
+        className="newsContent_title"
+      >
+        Заголовок
+      </h4>
+      <p
+        className="newsContent_description"
+      >
+        ОписаниОписание Описание  Описание Описание Описание  Описаниее
+      </p>
+    </div>
+    <div
+      className="newsContent_item"
+    >
+      <img
+        alt="news"
+        src="test-file-stub"
+      />
+      <h4
+        className="newsContent_title"
+      >
+        Заголовок
+      </h4>
+      <p
+        className="newsContent_description"
+      >
+        ОписаниОписание Описание  Описание Описание Описание  Описаниее
+      </p>
+    </div>
+    <div
+      className="newsContent_item"
+    >
+      <img
+        alt="news"
+        src="test-file-stub"
+      />
+      <h4
+        className="newsContent_title"
+      >
+        Заголовок
+      </h4>
+      <p
+        className="newsContent_description"
+      >
+        ОписаниОписание Описание  Описание Описание Описание  Описаниее
+      </p>
+    </div>
+    <div
+      className="newsContent_item"
+    >
+      <img
+        alt="news"
+        src="test-file-stub"
+      />
+      <h4
+        className="newsContent_title"
+      >
+        Заголовок
+      </h4>
+      <p
+        className="newsContent_description"
+      >
+        ОписаниОписание Описание  Описание Описание Описание  Описаниее
+      </p>
+    </div>
+    <div
+      className="newsContent_item"
+    >
+      <img
+        alt="news"
+        src="test-file-stub"
+      />
+      <h4
+        className="newsContent_title"
+      >
+        Заголовок
+      </h4>
+      <p
+        className="newsContent_description"
+      >
+        ОписаниОписание Описание  Описание Описание Описание  Описаниее
+      </p>
+    </div>
+    <div
+      className="newsContent_item"
+    >
+      <img
+        alt="news"
+        src="test-file-stub"
+      />
+      <h4
+        className="newsContent_title"
+      >
+        Заголовок
+      </h4>
+      <p
+        className="newsContent_description"
+      >
+        ОписаниОписание Описание  Описание Описание Описание  Описаниее
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -57,7 +57,15 @@
     }
 }
 
-.requestResult {
+// PROCESSING
+.processing {
+    display: flex;
+    align-items: center;
+    gap: 10vw;
+    margin: 5px;
+}
+
+.clarifyingText {
     @include textSettings($fontSize: 16px, $fontColor: $fontColorDark, $lineHeight: 20px);
 }
 

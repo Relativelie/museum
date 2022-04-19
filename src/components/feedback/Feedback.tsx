@@ -8,13 +8,14 @@ import { Telephone } from './telephone/Telephone';
 import { Time } from './time/Time';
 
 import './Feedback.scss';
+import { LoadingSpinner } from './loadingSpinner/LoadingSpinner';
 
 export const Feedback = () => {
-    const [requestResultText, setRequestResultText] = useState('');
+    const [clarifyingText, setClarifyingText] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const sendFeedbackDetails = async (e: MouseEvent<HTMLButtonElement>) => {
         const elem = e.target as HTMLFormElement;
-
         if (checkValues(elem)) {
             const inputValues = {
                 email: elem.form[0].value,
@@ -22,9 +23,14 @@ export const Feedback = () => {
                 date: elem.form[2].value,
                 time: elem.form[3].value,
             };
+            setIsLoading(true);
             await feedbackRequest(inputValues);
-            if (elem.parentElement !== null) elem.parentElement.reset();
-        }
+            if (elem.parentElement !== null) {
+                const parentElem = elem.parentElement as HTMLFormElement;
+                parentElem.reset();
+            }
+        } else setClarifyingText('Все поля должны быть заполнены');
+        setIsLoading(false);
     };
 
     const checkValues = (formValues: HTMLFormElement) => {
@@ -62,10 +68,10 @@ export const Feedback = () => {
             });
             const result = await resopnse.json();
             if (result.status === 'error') {
-                setRequestResultText('Something went wrong...');
-            } else setRequestResultText('Заявка отправлена');
+                setClarifyingText('Something went wrong...');
+            } else setClarifyingText('Заявка отправлена');
         } catch (err) {
-            setRequestResultText('Something went wrong...');
+            setClarifyingText('Something went wrong...');
         }
     };
 
@@ -86,7 +92,11 @@ export const Feedback = () => {
                     Подписаться
                 </button>
             </form>
-            <p className="requestResult">{requestResultText}</p>
+            <div className="processing">
+                <p className="clarifyingText">{clarifyingText}</p>
+                <LoadingSpinner isLoading={isLoading} />
+            </div>
+
         </div>
     );
 };

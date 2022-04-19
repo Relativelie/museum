@@ -19,78 +19,78 @@ describe('Feedback - Telephone component', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, '123');
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('123');
+        expect(inputEl).toHaveValue('1 (23');
     });
 
     test('change tel number to a string value', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, 'dfvdv');
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('');
+        expect(inputEl).toHaveValue('');
     });
 
     test('change tel number to a numeric value with length === 11 and press enter', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, '12345678901');
-        fireEvent.keyPress(screen.getByTestId('form-field-tel'), { key: 'Enter', code: 'Enter', charCode: 0 });
-        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input');
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('12345678901');
+        fireEvent.keyUp(inputEl, { key: 'Enter', code: 13 });
+        expect(inputEl).toHaveClass('feedback_input');
+        expect(inputEl).toHaveValue('1 (234)-567-89-01');
     });
 
     test('change tel number to a numeric value with length > 11', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, '123456789012');
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('12345678901');
+        expect(inputEl).toHaveValue('1 (234)-567-89-01');
     });
 
     test('change tel number to a numeric value with length < 11 and press enter', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, '1234567');
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('1234567');
-        fireEvent.keyPress(screen.getByTestId('form-field-tel'), { key: 'Enter', code: 'Enter', charCode: 0 });
-        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('1234567');
+        expect(inputEl).toHaveValue('1 (234)-567');
+        fireEvent.keyUp(inputEl, { key: 'Enter', code: 13 });
+        expect(inputEl).toHaveClass('feedback_input incorrectInputValue');
+        expect(inputEl).toHaveValue('1 (234)-567');
     });
 
     test('change tel number to a numeric value with length < 11 and unfocused input', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, '1234567');
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('1234567');
+        expect(inputEl).toHaveValue('1 (234)-567');
         userEvent.tab();
-        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
+        expect(inputEl).toHaveClass('feedback_input incorrectInputValue');
     });
 
     test('change tel value to empty value', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.click(inputEl);
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('');
+        expect(inputEl).toHaveValue('');
         userEvent.tab();
-        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
+        expect(inputEl).toHaveClass('feedback_input incorrectInputValue');
     });
 
     test('change tel value to incorrect value: only spaces', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, '     ');
-        expect(screen.getByTestId('form-field-tel')).toHaveValue('');
-        fireEvent.keyPress(screen.getByTestId('form-field-tel'), { key: 'Enter', code: 'Enter', charCode: 0 });
-        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
+        expect(inputEl).toHaveValue('');
+        fireEvent.keyUp(inputEl, { key: 'Enter', code: 13 });
+        expect(inputEl).toHaveClass('feedback_input incorrectInputValue');
     });
 
     test('add incorrect value, then add correct value', () => {
         render(<Telephone />);
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, '1234567');
-        fireEvent.keyPress(screen.getByTestId('form-field-tel'), { key: 'Enter', code: 'Enter', charCode: 0 });
-        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
+        fireEvent.keyUp(inputEl, { key: 'Enter', code: 13 });
+        expect(inputEl).toHaveClass('feedback_input incorrectInputValue');
         userEvent.type(inputEl, '12345678901');
         userEvent.tab();
-        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input');
+        expect(inputEl).toHaveClass('feedback_input');
     });
 
     test('add correct value, then add incorrect value', () => {
@@ -98,9 +98,10 @@ describe('Feedback - Telephone component', () => {
         const inputEl = screen.getByTestId('form-field-tel');
         userEvent.type(inputEl, '12345678901');
         userEvent.tab();
-        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input');
-        userEvent.type(inputEl, '1');
-        fireEvent.keyPress(screen.getByTestId('form-field-tel'), { key: 'Enter', code: 'Enter', charCode: 0 });
-        expect(screen.getByTestId('form-field-tel')).toHaveClass('feedback_input incorrectInputValue');
+        expect(inputEl).toHaveClass('feedback_input');
+        userEvent.clear(inputEl);
+        userEvent.type(inputEl, '14567');
+        userEvent.tab();
+        expect(inputEl).toHaveClass('feedback_input incorrectInputValue');
     });
 });

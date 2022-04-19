@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Feedback - Feedback component snapshot - Feedback component 1`] = `
+<div
+  className="feedback"
+>
+  <h3
+    className="feedback_title"
+  >
+    Подпишись
+  </h3>
+  <p
+    className="feedback_description"
+  >
+    Отправляем анонсы новых статей, выпусков и трансляций
+  </p>
+  <form
+    action="some url"
+    className="feedback_form"
+  >
+    <Email />
+    <Date />
+    <Telephone />
+    <Time />
+    <button
+      className="feedback_subscribe"
+      onClick={[Function]}
+      type="button"
+    >
+      Подписаться
+    </button>
+  </form>
+  <div
+    className="processing"
+  >
+    <p
+      className="clarifyingText"
+    >
+      
+    </p>
+    <LoadingSpinner
+      isLoading={false}
+    />
+  </div>
+</div>
+`;
