@@ -1,5 +1,5 @@
 import path from "path";
-import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin, ProvidePlugin } from "webpack";
+import { Configuration as WebpackConfiguration, ProvidePlugin } from "webpack";
 import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 
@@ -55,7 +55,6 @@ const config: Configuration = {
         new HtmlWebpackPlugin({
             template: "./public/index.html",
         }),
-        new HotModuleReplacementPlugin(),
         new ProvidePlugin({
             "React": "react",
         }),

@@ -6,10 +6,8 @@ exports[`Feedback - Email component snapshot - email component 1`] = `
   data-testid="form-field-email"
   name="email"
   onBlur={[Function]}
-  onChange={[Function]}
   onKeyUp={[Function]}
   placeholder="Email"
   type="email"
-  value=""
 />
 `;

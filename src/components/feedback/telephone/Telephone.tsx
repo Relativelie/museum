@@ -1,9 +1,9 @@
-import { FC, useState, useRef } from 'react';
+import { FC, useState, useRef, MutableRefObject } from 'react';
 
 export const Telephone: FC = () => {
     const [phone, setPhone] = useState('');
     const [isErrorPhone, setIsErrorPhone] = useState('');
-    const inputPhone = useRef() as React.MutableRefObject<HTMLInputElement>;
+    const inputPhone = useRef() as MutableRefObject<HTMLInputElement>;
 
     const validatePhone = (eventType: string) => {
         if (eventType === 'blur' || eventType === 'Enter') {
