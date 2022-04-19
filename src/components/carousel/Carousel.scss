@@ -3,6 +3,7 @@
 
 .carouselContent {
     position: relative;
+    max-height: 650px;
 
     & .carouselContent_text {
         position: absolute;
