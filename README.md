@@ -4,6 +4,7 @@ Used:
 - typescript
 - react
 - scss
+- unit tests
 
 Online demo: https://relativelie.github.io/museum/
 
