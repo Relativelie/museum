@@ -10,8 +10,8 @@ Online demo: https://relativelie.github.io/museum/
 
 ## How to build
 1. Clone repository
-``git clone git@github.com:Relativelie/museum.git /path/to/map``
-``cd  /path/to/map ``
+``git clone git@github.com:Relativelie/museum.git /path/to/museum``
+``cd  /path/to/museum ``
 2. Install dependencies
 ``npm install ``
 3. Build project
