@@ -10,9 +10,13 @@ export const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer_content">
-                <h3 className="footer_content_title">Заголовок</h3>
+                <header>
+                    <h3 className="footer_content_title">Заголовок</h3>
+                </header>
                 <p className="footer_content__text">ОписаниОписание Описание  Описание Описание Описание  Описаниее</p>
-                <a className="footer_content__anchor" href={link}>500na700.ru</a>
+                <address>
+                    <a className="footer_content__anchor" href={link}>500na700.ru</a>
+                </address>
             </div>
             <div className="footer_social">
                 <img src={vk} alt="vk" />

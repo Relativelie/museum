@@ -76,8 +76,10 @@ export const Feedback = () => {
     };
 
     return (
-        <div className="feedback">
-            <h3 className="feedback_title">Подпишись</h3>
+        <section className="feedback">
+            <header>
+                <h3 className="feedback_title">Подпишись</h3>
+            </header>
             <p className="feedback_description">Отправляем анонсы новых статей, выпусков и трансляций</p>
             <form className="feedback_form" action="some url">
                 <Email />
@@ -97,6 +99,6 @@ export const Feedback = () => {
                 <LoadingSpinner isLoading={isLoading} />
             </div>
 
-        </div>
+        </section>
     );
 };

@@ -34,12 +34,12 @@ export const CarouselComponent: FC = () => {
             {carouselContent.map(((elem) => {
                 const { id, name, image } = elem;
                 return (
-                    <div className="carouselContent" key={`carousel-${id}`}>
+                    <section className="carouselContent" key={`carousel-${id}`}>
                         <div className="carouselContent_text">
                             <h3>{name}</h3>
                         </div>
                         <img className="carouselContent_img" src={image} alt="slide" />
-                    </div>
+                    </section>
                 );
             }))}
         </Slider>

@@ -5,8 +5,10 @@ import './News.scss';
 
 export const News: FC = () => {
     return (
-        <div className="news">
-            <h3 className="newsTitle">Новости</h3>
+        <section className="news">
+            <header>
+                <h3 className="newsTitle">Новости</h3>
+            </header>
             <div className="newsContent">
                 {content.map(((elem) => {
                     const { id, title, description, image } = elem;
@@ -19,6 +21,6 @@ export const News: FC = () => {
                     );
                 }))}
             </div>
-        </div>
+        </section>
     );
 };

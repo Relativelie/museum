@@ -5,8 +5,10 @@ import './Faq.scss';
 
 export const Faq: FC = () => {
     return (
-        <div className="faq">
-            <h3 className="faq_title">FAQ</h3>
+        <section className="faq">
+            <header>
+                <h3 className="faq_title">FAQ</h3>
+            </header>
             <div className="faqContent">
                 {faqContent.map(((elem) => {
                     const { id, question, answer } = elem;
@@ -18,6 +20,6 @@ export const Faq: FC = () => {
                     );
                 }))}
             </div>
-        </div>
+        </section>
     );
 };
