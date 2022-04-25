@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import * as ShallowRenderer from 'react-test-renderer/shallow';
 import App from '../../../../src/components/app/App';
 
-describe('Feedback - App component', () => {
+describe('App component', () => {
     test('snapshot - app component', () => {
         const renderer = ShallowRenderer.createRenderer();
         renderer.render(<App />);

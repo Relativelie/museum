@@ -11,10 +11,12 @@ function App() {
   return (
     <div className="App">
       <Menu />
-      <CarouselComponent />
-      <Faq />
-      <News />
-      <Feedback />
+      <main>
+        <CarouselComponent />
+        <Faq />
+        <News />
+        <Feedback />
+      </main>
       <Footer />
     </div>
   );
